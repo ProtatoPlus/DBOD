@@ -1,0 +1,70 @@
+
+import discord
+from discord.ext import commands
+from discord.utils import get
+import os
+
+@client.event
+async def on_ready():
+    print("I'm in")
+    print(client.user)
+
+@client.command()
+async def useless(ctx):
+  await ctx.reply("useless")
+
+@client.command()
+async def breadspam(ctx, user: discord.User=None):
+  for i in range(5):
+   user_string = '<@>'
+   index = user_string.find('>')
+   idstring = str(user.id)
+   final_string = user_string[:index] + idstring + user_string[index:]
+   print(final_string)
+   await ctx.send(":bread:" + final_string)
+
+@client.command()
+async def getUserId(ctx, user: discord.User=None):
+    if not user:
+        userId = ctx.author.id
+    else:
+        userId = user.id
+    await ctx.send(userId)
+
+
+client.run(os.environ.get('USER_TOKEN')
+
+import discord
+from discord.ext import commands
+from discord.utils import get
+import os
+
+@client.event
+async def on_ready():
+    print("I'm in")
+    print(client.user)
+
+@client.command()
+async def useless(ctx):
+  await ctx.reply("useless")
+
+@client.command()
+async def breadspam(ctx, user: discord.User=None):
+  for i in range(5):
+   user_string = '<@>'
+   index = user_string.find('>')
+   idstring = str(user.id)
+   final_string = user_string[:index] + idstring + user_string[index:]
+   print(final_string)
+   await ctx.send(":bread:" + final_string)
+
+@client.command()
+async def getUserId(ctx, user: discord.User=None):
+    if not user:
+        userId = ctx.author.id
+    else:
+        userId = user.id
+    await ctx.send(userId)
+
+
+client.run(os.environ.get('USER_TOKEN')
