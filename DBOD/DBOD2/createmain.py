@@ -1,7 +1,7 @@
 import docker
 client = docker.from_env()
-def createbot(token, prefix):
+def createbot(token, prefix, type):
     tok = "BOT_TOKEN=" + str(token)
     pref = "PREFIX=" + str(prefix)
     cfg = [tok, pref]
-    client.containers.run("dbod_image", detach=True, environment=cfg)
+    client.containers.run(type, detach=True, environment=cfg)
