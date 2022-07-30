@@ -13,12 +13,13 @@ class application:
           <head></head>
           <body>
             <p>Make bot<br>
-            <select name="type">
-             <option value="red">Minecraft</option>
-             <option value="purple">Basic</option>
-            </select>
             <form autocomplete="off" method="get" action="func">
               <input type="text" name="num" placeholder="token"/>
+              <br>
+              <select name="dbodt">
+               <option value="dbod_minecraft">Minecraft</option>
+               <option value="dbod_image">basic</option>
+              </select>
               <br>
               <input type="text" name="pref" placeholder="prefix"/>
               <button type="submit">create</button>
@@ -28,8 +29,8 @@ class application:
         </html>"""
 
     @cherrypy.expose
-    def func(self, num, pref):
-        createbot(num, pref, type)
+    def func(self, num, pref, dbodt):
+        createbot(num, pref, dbodt)
         return "Your bot has been created."
 
 if __name__ == '__main__':
